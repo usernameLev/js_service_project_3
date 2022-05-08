@@ -1,2 +1,2 @@
-export { slider } from './slider';
+export { MainSlider } from './slider/slider-main';
 export { playVideo } from './playVideo';
