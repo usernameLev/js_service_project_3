@@ -7,17 +7,11 @@ export class Slider {
   }
 
   showSlides(n) {
-    if (n > this.slides.length) {
-      this.slideIndex = 1;
-    }
+    if (n > this.slides.length) this.slideIndex = 1;
 
-    if (n < 1) {
-      this.slideIndex = this.slides.length;
-    }
+    if (n < 1) this.slideIndex = this.slides.length;
 
-    this.slides.forEach((slide) => {
-      slide.style.display = 'none';
-    });
+    this.slides.forEach((slide) => (slide.style.display = 'none'));
 
     this.slides[this.slideIndex - 1].style.display = 'block';
   }
@@ -28,9 +22,7 @@ export class Slider {
 
   render() {
     this.btns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        this.plusSlides(1);
-      });
+      btn.addEventListener('click', () => this.plusSlides(1));
 
       btn.parentNode.previousElementSibling.addEventListener('click', (e) => {
         e.preventDefault();
