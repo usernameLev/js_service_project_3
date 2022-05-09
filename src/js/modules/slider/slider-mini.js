@@ -14,9 +14,8 @@ export class MiniSlider extends Slider {
       }
     });
 
-    if (!this.slides[0].closest('button')) {
+    if (!this.slides[0].closest('button'))
       this.slides[0].classList.add(this.activeClass);
-    }
 
     if (this.animate) {
       this.slides[0].querySelector('.card__title').style.opacity = '1';
@@ -69,8 +68,6 @@ export class MiniSlider extends Slider {
     this.bindTriggers();
     this.decorateSlides();
 
-    if (this.autoplay) {
-      setInterval(() => this.nextSlide(), 5000);
-    }
+    if (this.autoplay) setInterval(() => this.nextSlide(), 5000);
   }
 }
